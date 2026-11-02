@@ -266,115 +266,179 @@ CREATE TABLE IF NOT EXISTS USUARIO (
 -- ADM
 
 INSERT INTO ADM ("ID_ADM", nome, senha, email) VALUES
+
     ('1', 'Administrador Olius', 'senha_teste_123', 'admin@olius.local');
 
 -- B2B
 
 INSERT INTO B2B ("ID_B2B", "CNPJ", "ID_endereco", nome_empresa, telefone, "Plano", "ID_usuario") VALUES
-                                                                                                       ('2', '11222333000181', '12', 'Supermercado Vida', '11987650002', 'Empresa', NULL),
-                                                                                                       ('3', '23456789000195', '3', 'Restaurante Sabor Bom', '19987650003', 'Profissional', NULL);
+
+       ('2', '11222333000181', '12', 'Supermercado Vida', '11987650002', 'Empresa', NULL),
+
+       ('3', '23456789000195', '3', 'Restaurante Sabor Bom', '19987650003', 'Profissional', NULL);
 
 -- B2C
 
 INSERT INTO B2C ("ID_B2C", "CPF", "ID_usuario") VALUES
-                                                      ('1', '11122233344', '5'),
-                                                      ('2', '22233344455', '6'),
-                                                      ('3', '33344455566', '7'),
-                                                      ('4', '44455566677', '8'),
-                                                      ('5', '55566677788', '9'),
-                                                      ('6', '12345678909', '4');
+
+       ('1', '11122233344', '5'),
+
+       ('2', '22233344455', '6'),
+
+       ('3', '33344455566', '7'),
+
+       ('4', '44455566677', '8'),
+
+       ('5', '55566677788', '9'),
+
+       ('6', '12345678909', '4');
 
 -- CARTEIRA
 
 INSERT INTO CARTEIRA ("ID_carteira", pontos_totais, nivel, "ID_B2C", "ID_B2B") VALUES
-                                                                                     ('1', '98', '1', '1', NULL),
-                                                                                     ('2', '35', '1', '2', NULL),
-                                                                                     ('3', '80', '2', '3', NULL),
-                                                                                     ('4', '22', '1', '4', NULL),
-                                                                                     ('5', '100', '2', '5', NULL),
-                                                                                     ('7', '150', '2', NULL, '2'),
-                                                                                     ('8', '78', '1', NULL, '3'),
-                                                                                     ('6', '493', '4', NULL, NULL),
-                                                                                     ('9', '0', '1', NULL, NULL);
+       ('1', '98', '1', '1', NULL),
+
+       ('2', '35', '1', '2', NULL),
+
+       ('3', '80', '2', '3', NULL),
+
+       ('4', '22', '1', '4', NULL),
+
+       ('5', '100', '2', '5', NULL),
+
+       ('7', '150', '2', NULL, '2'),
+
+       ('8', '78', '1', NULL, '3'),
+
+       ('6', '493', '4', NULL, NULL),
+
+       ('9', '0', '1', NULL, NULL);
 
 -- CERTIFICADO
 
 INSERT INTO CERTIFICADO ("ID_certificado", volume_total, "DT_emissao", "PDF", "ID_B2B", "ID_coleta") VALUES
+
     ('2', '150.5', '2025-10-05', 'certificados/cert_0002.pdf', '3', '2');
 
 -- COLETA
 
 INSERT INTO COLETA ("ID_coleta", "DT_coleta", volume_coletado, avaliacao_coleta, "ID_solicitacao", "ID_motorista", "ID_B2B") VALUES
-                                                                                                                                   ('3', '2025-10-09', '78.00', '5', '3', '4', '3'),
-                                                                                                                                   ('4', '2025-11-03', '298.00', '4', '6', '2', NULL),
-                                                                                                                                   ('1', '2025-10-02', '195.00', '5', '1', NULL, NULL),
-                                                                                                                                   ('2', '2025-10-04', '150.50', '4', '2', NULL, '2');
+
+       ('3', '2025-10-09', '78.00', '5', '3', '4', '3'),
+
+       ('4', '2025-11-03', '298.00', '4', '6', '2', NULL),
+
+       ('1', '2025-10-02', '195.00', '5', '1', NULL, NULL),
+
+       ('2', '2025-10-04', '150.50', '4', '2', NULL, '2');
 
 -- ENDERECO
 
 INSERT INTO ENDERECO ("ID_endereco", rua, cidade, bairro, cep, numero, complemento, estado) VALUES
-                                                                                                  ('1', 'Rua Augusta', 'Sao Paulo', 'Consolacao', '01304001', '1200', 'Sala 31', NULL),
-                                                                                                  ('2', 'Avenida Paulista', 'Sao Paulo', 'Bela Vista', '01310100', '1578', NULL, NULL),
-                                                                                                  ('5', 'Rua da Bahia', 'Belo Horizonte', 'Lourdes', '30160011', '300', 'Bloco B', NULL),
-                                                                                                  ('6', 'Rua XV de Novembro', 'Curitiba', 'Centro', '80020310', '210', NULL, NULL),
-                                                                                                  ('7', 'Avenida Beira Mar', 'Florianopolis', 'Centro', '88010400', '77', 'Casa 2', NULL),
-                                                                                                  ('8', 'Rua Sete de Setembro', 'Porto Alegre', 'Centro Historico', '90010190', '150', NULL, NULL),
-                                                                                                  ('9', 'Avenida Sete de Setembro', 'Salvador', 'Vitoria', '40080002', '480', 'Sala 5', NULL),
-                                                                                                  ('10', 'Rua do Sol', 'Recife', 'Boa Viagem', '51021000', '62', NULL, NULL),
-                                                                                                  ('11', 'ap', 'São Paulo', 'Cumbica', '02078010', '151', 'Galpao 4', 'SP'),
-                                                                                                  ('4', 'Avenida Atlantica', 'Rio de Janeiro', 'Copacabana', '22010000', '900', 'Sala 52', 'RJ'),
-                                                                                                  ('12', 'Avenida dos Autonomistas', 'Osasco', 'Centro', '06194000', '2500', 'Galpao 1', 'SP'),
-                                                                                                  ('3', 'Rua das Flores', 'Campinas', 'Centro', '13010010', '45', 'Apto 12', 'SP'),
-                                                                                                  ('14', 'ap', 'São Paulo', 'Copacabana', '02078010', '151', 'Loja 2', 'SP');
+
+      ('1', 'Rua Augusta', 'Sao Paulo', 'Consolacao', '01304001', '1200', 'Sala 31', NULL),
+
+      ('2', 'Avenida Paulista', 'Sao Paulo', 'Bela Vista', '01310100', '1578', NULL, NULL),
+
+      ('5', 'Rua da Bahia', 'Belo Horizonte', 'Lourdes', '30160011', '300', 'Bloco B', NULL),
+
+      ('6', 'Rua XV de Novembro', 'Curitiba', 'Centro', '80020310', '210', NULL, NULL),
+
+      ('7', 'Avenida Beira Mar', 'Florianopolis', 'Centro', '88010400', '77', 'Casa 2', NULL),
+
+      ('8', 'Rua Sete de Setembro', 'Porto Alegre', 'Centro Historico', '90010190', '150', NULL, NULL),
+
+      ('9', 'Avenida Sete de Setembro', 'Salvador', 'Vitoria', '40080002', '480', 'Sala 5', NULL),
+
+      ('10', 'Rua do Sol', 'Recife', 'Boa Viagem', '51021000', '62', NULL, NULL),
+
+      ('11', 'ap', 'São Paulo', 'Cumbica', '02078010', '151', 'Galpao 4', 'SP'),
+
+      ('4', 'Avenida Atlantica', 'Rio de Janeiro', 'Copacabana', '22010000', '900', 'Sala 52', 'RJ'),
+
+      ('12', 'Avenida dos Autonomistas', 'Osasco', 'Centro', '06194000', '2500', 'Galpao 1', 'SP'),
+
+      ('3', 'Rua das Flores', 'Campinas', 'Centro', '13010010', '45', 'Apto 12', 'SP'),
+
+      ('14', 'ap', 'São Paulo', 'Copacabana', '02078010', '151', 'Loja 2', 'SP');
 
 -- ENTREGA_PEV
 
 INSERT INTO ENTREGA_PEV ("ID_entrega", "DT_entrega", volume_entrega, "ID_PEV", "ID_B2C") VALUES
-                                                                                               ('3', '2025-10-06', '8.00', NULL, '3'),
-                                                                                               ('4', '2025-10-09', '2.25', NULL, '4'),
-                                                                                               ('6', '2025-10-15', '4.75', NULL, '1'),
-                                                                                               ('1', '2025-10-02', '5.00', NULL, '1'),
-                                                                                               ('2', '2025-10-04', '3.50', NULL, '2'),
-                                                                                               ('5', '2025-10-11', '10.00', NULL, '5');
+
+       ('3', '2025-10-06', '8.00', NULL, '3'),
+
+       ('4', '2025-10-09', '2.25', NULL, '4'),
+
+       ('6', '2025-10-15', '4.75', NULL, '1'),
+
+       ('1', '2025-10-02', '5.00', NULL, '1'),
+
+       ('2', '2025-10-04', '3.50', NULL, '2'),
+
+       ('5', '2025-10-11', '10.00', NULL, '5');
 
 -- MOTORISTA
 
 INSERT INTO MOTORISTA ("ID_motorista", empresa_resp, telefone, nome, licenca, status) VALUES
-                                                                                            ('2', 'TransVerde Logistica', '11999110002', 'Paulo Ricardo', 'CNH-AD-00123457', NULL),
-                                                                                            ('4', 'EcoFrota Transportes', '21999110004', 'Joao Batista', 'CNH-AD-00345678', NULL);
+
+       ('2', 'TransVerde Logistica', '11999110002', 'Paulo Ricardo', 'CNH-AD-00123457', NULL),
+
+       ('4', 'EcoFrota Transportes', '21999110004', 'Joao Batista', 'CNH-AD-00345678', NULL);
 
 -- MOVIMENTACAO_PONTOS
 
 INSERT INTO MOVIMENTACAO_PONTOS ("ID_movimentacao", quantidade_pontos, "ID_carteira", "ID_coleta", "ID_entrega") VALUES
-                                                                                                                       ('1', '50', '1', NULL, '1'),
-                                                                                                                       ('2', '35', '2', NULL, '2'),
-                                                                                                                       ('3', '80', '3', NULL, '3'),
-                                                                                                                       ('4', '22', '4', NULL, '4'),
-                                                                                                                       ('5', '100', '5', NULL, '5'),
-                                                                                                                       ('6', '48', '1', NULL, '6'),
-                                                                                                                       ('7', '195', '6', '1', NULL),
-                                                                                                                       ('8', '150', '7', '2', NULL),
-                                                                                                                       ('9', '78', '8', '3', NULL),
-                                                                                                                       ('10', '298', '6', '4', NULL);
+
+       ('1', '50', '1', NULL, '1'),
+
+       ('2', '35', '2', NULL, '2'),
+
+       ('3', '80', '3', NULL, '3'),
+
+       ('4', '22', '4', NULL, '4'),
+
+       ('5', '100', '5', NULL, '5'),
+
+       ('6', '48', '1', NULL, '6'),
+
+       ('7', '195', '6', '1', NULL),
+
+       ('8', '150', '7', '2', NULL),
+
+       ('9', '78', '8', '3', NULL),
+
+       ('10', '298', '6', '4', NULL);
 
 -- SOLICITACAO_COLETA
 
 INSERT INTO SOLICITACAO_COLETA ("ID_solicitacao", volume_estimado, "DT_solicitacao", "ID_B2B", status) VALUES
-                                                                                                             ('3', '80.00', '2025-10-08', '3', 'Realizada'),
-                                                                                                             ('2', '150.50', '2025-10-03', '2', 'Realizada'),
-                                                                                                             ('1', '200.00', '2025-10-01', NULL, 'Realizada'),
-                                                                                                             ('4', '120.00', '2025-10-20', NULL, NULL),
-                                                                                                             ('6', '300', '2025-11-02', '2', 'Realizada');
+
+       ('3', '80.00', '2025-10-08', '3', 'Realizada'),
+
+       ('2', '150.50', '2025-10-03', '2', 'Realizada'),
+
+       ('1', '200.00', '2025-10-01', NULL, 'Realizada'),
+
+       ('4', '120.00', '2025-10-20', NULL, NULL),
+
+       ('6', '300', '2025-11-02', '2', 'Realizada');
 
 -- USUARIO
 
 INSERT INTO USUARIO ("ID_usuario", email, telefone, nome, primeiro_registro, senha, "ID_endereco", tipo_usuario) VALUES
-                                                                                                                       ('5', 'ana.souza@email.com', '11987650005', 'Ana Souza', '2025-05-11', 'hash_senha_005', '1', 'B2C'),
-                                                                                                                       ('6', 'bruno.lima@email.com', '11987650006', 'Bruno Lima', '2025-06-02', 'hash_senha_006', '2', 'B2C'),
-                                                                                                                       ('7', 'carla.dias@email.com', '31987650007', 'Carla Dias', '2025-06-18', 'hash_senha_007', '5', 'B2C'),
-                                                                                                                       ('8', 'diego.alves@email.com', '41987650008', 'Diego Alves', '2025-07-09', 'hash_senha_008', '6', 'B2C'),
-                                                                                                                       ('9', 'elisa.matos@email.com', '48987650009', 'Elisa Matos', '2025-08-01', 'hash_senha_009', '7', 'B2C'),
-                                                                                                                       ('4', 'oleo@lanchonetecentral.com', '21987650004', 'Lanchonete Central', '2025-04-20', 'lanchonete123.', '4', 'B2C');
+
+       ('5', 'ana.souza@email.com', '11987650005', 'Ana Souza', '2025-05-11', 'hash_senha_005', '1', 'B2C'),
+
+       ('6', 'bruno.lima@email.com', '11987650006', 'Bruno Lima', '2025-06-02', 'hash_senha_006', '2', 'B2C'),
+
+       ('7', 'carla.dias@email.com', '31987650007', 'Carla Dias', '2025-06-18', 'hash_senha_007', '5', 'B2C'),
+
+       ('8', 'diego.alves@email.com', '41987650008', 'Diego Alves', '2025-07-09', 'hash_senha_008', '6', 'B2C'),
+
+       ('9', 'elisa.matos@email.com', '48987650009', 'Elisa Matos', '2025-08-01', 'hash_senha_009', '7', 'B2C'),
+
+       ('4', 'oleo@lanchonetecentral.com', '21987650004', 'Lanchonete Central', '2025-04-20', 'lanchonete123.', '4', 'B2C');
 
 -- ==========================================
 -- PRIMARY KEYS E UNIQUE
